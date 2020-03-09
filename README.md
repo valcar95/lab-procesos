@@ -33,8 +33,13 @@ Realizar los siguientes ejercicios:
 5. Escriba ahora un programa que use ```wait()``` para esperar que el proceso hijo finalice su ejecución. ¿Cuál es el valor de retorno de la función ```wait()```?, ¿Qué pasa si usted usa la función ```wait``` en el hijo?
 
   R: Retorna el PID del proceso hijo que se ejecutó, o -1 si no hubo hijos para esperar o si no se crearon procesos hijos. Cuando se usa el wait en el hijo el wait() retorna -1 según lo mencionado anteriormente, ya que el proceso hijo no ha creado más hijos.
+  
 6. Haga un programa, como el del ejercicio anterior, con una breve modificación, la cual consiste en usar ```waitpid()``` en lugar de ```wait()```. ¿Cuándo podría ser ```waitpid()``` útil?
+
+  R: Cuando se desea esperar por un proceso en específico del cual se tiene el PID, o bien para esperar hasta que cualquiera de los hijos termine, en general waitpid() nos da más felixibilidad a la hora de esperar por la ejecución de cualquier otro proceso que estemos ejecutando.
 7. Escriba un programa que cree un proceso hijo y entonces en el proceso hijo cierre la salida estandar (```STDOUT FILENO```). ¿Qué pasa si el hijo llama ```printf()``` para imprimir alguna salida después de cerrar el descriptor?
+
+  R: 
 8. Escriba un programa que cree dos hijos y conecte la salida estándar de un hijo a la entrada estándar del otro usando la llamada a sistema ```pipe()```
 
 ## 3. Entregable ##
